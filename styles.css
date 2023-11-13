@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
 /* Colors */
 :root {
-    --light-red: hsla(0, 100%, 67%, 10%);
-    --orangey-yellow: hsla(39, 100%, 56%, 10%);
-    --green-teal: hsla(166, 100%, 37%, 10%);
-    --cobalt-blue: hsla(234, 85%, 45%, 10%);
+    --light-red: hsla(0, 100%, 67%);
+    --orangey-yellow: hsla(39, 100%, 56%);
+    --green-teal: hsla(166, 100%, 37%);
+    --cobalt-blue: hsla(234, 85%, 45%);
+
+    --light-red-t: hsla(0, 100%, 67%, 5%);
+    --orangey-yellow-t: hsla(39, 100%, 56%, 5%);
+    --green-teal-t: hsla(166, 100%, 37%, 5%);
+    --cobalt-blue-t: hsla(234, 85%, 45%, 5%);
 
     --white: hsl(0, 0%, 100%);
     --pale-blue: hsla(221, 100%, 96%, 75%);
@@ -79,6 +84,14 @@ h1 {
     font-size: 50px;
 }
 
+h4 {
+    font-size: 20px;
+}
+
+svg {
+    padding-right: 10px;
+}
+
 /* RESULT */
 .result {
     /* same border-radius */
@@ -114,9 +127,11 @@ h1 {
 
 .result p {
     color: hsla(221, 100%, 96%, 50%);
+    margin-bottom: 10px;
 }
 
 .result > p {
+    /* margin between Great and paragraph */
     margin-top: -20px;
 }
 
@@ -125,12 +140,76 @@ h1 {
 .summary {
     /* 50% des flex containers der Card */
     flex: 1;
+    /* flex collumn */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.summary > * {
+    background-color: var(--cobalt-blue);
 }
 
 .score-box {
     display: flex;
+    justify-content: space-between;
     padding: 15px;
+    border-radius: 10px;
 }
+
+.score-block-1 {
+    /* colored Titles  */
+    display: flex;
+}
+
+.reaction .score-block-1{
+    color: var(--light-red);
+}
+
+.memory .score-block-1{
+    color: var(--orangey-yellow);
+}
+
+.verbal .score-block-1{
+    color: var(--green-teal);
+}
+
+.visual .score-block-1{
+    color: var(--cobalt-blue);
+}
+
+.reaction {
+    background-color: var(--light-red-t);
+}
+
+.memory {
+    background-color: var(--orangey-yellow-t);
+}
+
+.verbal {
+    background-color: var(--green-teal-t);
+}
+
+.visual {
+    background-color: var(--cobalt-blue-t);
+}
+
+
+
+.button {
+    /* style */
+    
+    height: 50px;
+    border-radius: 500px;
+    color: white;
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+
+    /* postioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 /* LINKS */
