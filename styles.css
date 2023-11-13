@@ -1,19 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
 /* Colors */
 :root {
-    --light-red: hsl(0, 100%, 67%);
-    --orangey-yellow: hsl(39, 100%, 56%);
-    --green-teal: hsl(166, 100%, 37%);
-    --cobalt-blue: hsl(234, 85%, 45%);
+    --light-red: hsla(0, 100%, 67%, 10%);
+    --orangey-yellow: hsla(39, 100%, 56%, 10%);
+    --green-teal: hsla(166, 100%, 37%, 10%);
+    --cobalt-blue: hsla(234, 85%, 45%, 10%);
 
     --white: hsl(0, 0%, 100%);
-    --pale-blue: hsl(221, 100%, 96%);
-    --light-lavender: hsl(241, 100%, 89%);
+    --pale-blue: hsla(221, 100%, 96%, 75%);
+    --light-lavender: hsla(241, 100%, 89%, 50%);
     --dark-gray-blue: hsl(224, 30%, 27%);
 }
 
+/* colors */
+.light-lavender {
+    color: var(--light-lavender);
+}
+.pale-blue {
+    color: var(--pale-blue);
+}
+
+
+/* ALL */
 * {
-    margin: 0;5
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
@@ -22,9 +36,15 @@ body {
     font-size: 18px;
     /* remove default margin */
     margin: 0;
+    /* stretch onto whole site */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .main {
+    /* stretch on whole page */
+    flex-grow: 1;
     /* center card */
     display: flex;
     justify-content: center;
@@ -41,67 +61,79 @@ body {
     box-shadow: 20px 20px 50px hsla(234, 85%, 45%, 10%);
     border-radius: 25px;
     background-color: white;
+    /* größe der Card */
+    width: 50%;
+    height: 70%;
 }
 
+.card > * {
+    /* padding */
+    padding: 35px;
+    /* flexbox innerhalb */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+/* RESULT */
 .result {
     /* same border-radius */
     border-radius: inherit;
     /* 50% des flex containers der Card*/
     flex: 1;
-    /* flexbox innerhalb */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* padding */
-    padding: 20px;
-}
-
-.summary {
-    /* 50% des flex containers der Card */
-    flex: 1;
-    /* Flexbox innerhalb */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.result {
+    /* style */
     background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-}
-
-.result h4, .result p {
-    color: var(--light-lavender);
-    display: flex;
-    justify-content: space-around;
-}
-
-.result h1, .result h2{
     color: white;
 }
 
-.result h4 {
-    margin-top: 0;
-}
-
-.points p{
-    color: var(--pale-blue);
-}
-
-.points p {
-    color: var(--light-lavender);
+/* alle objecte centeren */
+.result * {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    text-align: center;
 }
 
 .points {
+    /* background */
     background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
-    width: 100%;
+    /* align items center */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* kreis */
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+}
+
+.result p {
+    color: hsla(221, 100%, 96%, 50%);
+}
+
+.result > p {
+    margin-top: -20px;
+}
+
+
+/* SUMMARY */
+.summary {
+    /* 50% des flex containers der Card */
+    flex: 1;
 }
 
 .score-box {
     display: flex;
+    padding: 15px;
 }
 
 
-
+/* LINKS */
 .attribution { 
     font-size: 11px; text-align: center; 
 }
@@ -110,14 +142,14 @@ body {
     color: hsl(228, 45%, 44%); 
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .score-box {
-      flex-direction: column; /* Ändert die Ausrichtung der Flexbox auf Spaltenlayout */
+      flex-direction: column;
     }
   
     .result,
     .summary {
-      width: 100%; /* Setzt die Breite auf 100%, um die volle Breite des Bildschirms zu nutzen */
+      width: 100%; 
     }
     .main {
         padding: 0;
@@ -134,4 +166,4 @@ body {
     .result *{
         margin-top: 0;
     }
-  }
+} */
