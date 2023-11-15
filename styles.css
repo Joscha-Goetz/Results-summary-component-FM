@@ -39,24 +39,22 @@ body {
     /* font */
     font-family: "Hanken Grotesk", sans-serif;
     font-size: 18px;
-    /* remove default margin */
-    margin: 0;
     /* stretch onto whole site */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-.main {
+#main {
     /* stretch on whole page */
     flex-grow: 1;
     /* center card */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: red;
     /* padding between screen border and card */
-    padding: 5rem;
+    padding: 5%;
 }
 
 .card {
@@ -146,20 +144,38 @@ svg {
     justify-content: space-between;
 }
 
-.summary > * {
-    background-color: var(--cobalt-blue);
+.score-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .score-box {
     display: flex;
     justify-content: space-between;
     padding: 15px;
+    margin-top: 20px;
     border-radius: 10px;
+    height: 25px;
 }
 
 .score-block-1 {
     /* colored Titles  */
     display: flex;
+}
+
+.score-value {
+    display: flex;
+    font-weight: bold;
+}
+
+.score-value-1 {
+    margin-right: 5px;
+    color: var(--dark-gray-blue);
+}
+
+.score-value-2 {
+    color: hsla(224, 30%, 27%, 50%);
 }
 
 .reaction .score-block-1{
@@ -202,7 +218,7 @@ svg {
     height: 50px;
     border-radius: 500px;
     color: white;
-    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    background-color: var(--dark-gray-blue);
 
     /* postioning */
     display: flex;
@@ -210,15 +226,9 @@ svg {
     align-items: center;
 }
 
-
-
-/* LINKS */
-.attribution { 
-    font-size: 11px; text-align: center; 
-}
-
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
+.button:hover {
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    cursor: pointer;
 }
 
 /* @media screen and (max-width: 600px) {
@@ -246,3 +256,25 @@ svg {
         margin-top: 0;
     }
 } */
+
+@media screen and (max-width: 1225px) {
+    #main {
+        padding: 0;
+    }
+
+    .card {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        flex-direction: column;
+    }
+
+    .result {
+        padding: 10px 10px;
+        border-radius: 0 0 25px 25px;        
+    }
+
+    .button {
+        margin-top: 10px;
+    }
+}
